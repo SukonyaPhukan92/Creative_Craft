@@ -124,7 +124,7 @@
 
     .order-band { position: relative; overflow: hidden; background: var(--rust); color: var(--paper); padding: 76px 0; }
     .order-band::after { content: "✳"; position: absolute; right: 8%; top: 35%; color: rgba(244,238,230,.18); font-size: 180px; line-height: .5; }
-    .order-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+    .order-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 35px; }
     .order-band h2 { max-width: 650px; }
     .order-band .eyebrow { color: #ffd8a1; }
     .button-light { position: relative; z-index: 1; color: var(--rust); background: var(--paper); white-space: nowrap; }
@@ -159,8 +159,11 @@
       .story-copy { margin-top: 30px; }
       .custom { display: block; }
       .steps { margin-top: 46px; }
+      .order-band { padding: 64px 0 72px; }
       .order-inner { display: block; }
-      .order-inner .button { margin-top: 28px; }
+      .order-band h2 { max-width: 12ch; line-height: 1.04; }
+      .order-inner .button { width: 100%; max-width: 280px; margin-top: 34px; }
+      .order-band::after { right: -18%; top: 54%; font-size: 125px; }
       .footer-top, .footer-bottom { display: block; }
       .socials { margin-top: 22px; }
       .footer-bottom p + p { margin-top: 10px; }
@@ -247,7 +250,7 @@
 
   <script>
     // Replace this sample number with the studio's WhatsApp number, country code included.
-    const whatsappNumber = "919876543210";
+    const whatsappNumber = "918638864691";
     const whatsappBase = `https://wa.me/${whatsappNumber}`;
     const defaultMessage = "Hi Creative Craft! I would love to place an order. Can you share your current catalogue and details?";
     const whatsappLink = document.querySelector("#whatsapp-link");
