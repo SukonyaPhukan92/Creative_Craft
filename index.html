@@ -210,15 +210,15 @@
         <p class="section-intro">Discover keepsakes and tactile details rooted in Assam, made for homes, celebrations, gifting, and thoughtful wholesale orders.</p>
       </div>
       <div class="product-grid">
-        <a class="product" href="#order" data-product="Axom Keepsakes">
+        <a class="product" href="#order" data-product="Axom Keepsakes" data-details="framed heritage artwork, handmade to order">
           <div class="product-image"><img src="images/product_1.png" alt="Handmade framed keepsake with Assam artwork"><span class="tag">best seller</span></div>
           <div class="product-info"><div><h3>Axom keepsakes</h3><p>framed heritage · made to order</p></div><span class="order-hint">enquire ↗</span></div>
         </a>
-        <a class="product" href="#order" data-product="Gamosa Stories">
+        <a class="product" href="#order" data-product="Gamosa Stories" data-details="Assamese handloom textile, framed with care">
           <div class="product-image"><img src="images/product_2.png" alt="Framed Assamese handloom artwork"><span class="tag">made to order</span></div>
           <div class="product-info"><div><h3>Gamosa stories</h3><p>handloom · framed with care</p></div><span class="order-hint">enquire ↗</span></div>
         </a>
-        <a class="product" href="#order" data-product="Handmade Colour Crochet">
+        <a class="product" href="#order" data-product="Handmade Colour Crochet" data-details="colourful handmade crochet, tactile and customisable">
           <div class="product-image"><img src="images/product_6.png" alt="Handmade crochet sunflower bag"><span class="tag">new</span></div>
           <div class="product-info"><div><h3>Handmade colour</h3><p>crochet · colourful · tactile</p></div><span class="order-hint">enquire ↗</span></div>
         </a>
@@ -257,7 +257,7 @@
 
     document.querySelectorAll("[data-product]").forEach((product) => {
       product.addEventListener("click", () => {
-        const message = `Hi Creative Craft! I am interested in the ${product.dataset.product}. Please share the details and available options.`;
+        const message = `Hi Creative Craft! I am interested in the ${product.dataset.product} (${product.dataset.details}). Please share the available options, dimensions, customisation details, and delivery timeline.`;
         whatsappLink.href = `${whatsappBase}?text=${encodeURIComponent(message)}`;
       });
     });
