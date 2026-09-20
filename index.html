@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffc34d">
+  <meta name="description" content="Creative Craft - art, craft, props, crochet, interior and handloom from Assam.">
+  <link rel="icon" type="image/jpeg" href="creative-craft-logo.jpg">
+  <title>Creative Craft | Art, craft and handloom from Assam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fff9ed;
+      --paper-deep: #f4e3c2;
+      --ink: #211d19;
+      --muted: #766b60;
+      --rust: #a92424;
+      --rust-dark: #751b1b;
+      --sage: #52734d;
+      --turmeric: #e9ad27;
+      --line: rgba(36, 33, 31, .15);
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      overflow-x: hidden;
+      background-image: repeating-linear-gradient(0deg, transparent 0 38px, rgba(169, 36, 36, .035) 38px 40px);
+    }
+    body::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      z-index: 10;
+      inset: 0;
+      opacity: .08;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow { color: var(--rust); font: 500 11px var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+
+    .topline {
+      padding: 11px 24px;
+      color: var(--paper);
+      background: var(--rust);
+      font: 500 11px var(--mono);
+      letter-spacing: .08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    header { padding: 26px 0 0; }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font: 500 15px var(--mono); letter-spacing: .03em; }
+    .brand-copy { display: grid; gap: 3px; }
+    .brand-copy strong { font: 700 14px var(--sans); letter-spacing: .02em; }
+    .brand-copy small { color: var(--rust-dark); font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .brand-mark { display: block; width: 58px; height: 58px; flex: none; border: 2px solid var(--ink); border-radius: 50%; object-fit: cover; }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: var(--muted); font-size: 13px; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; color: var(--paper); background: var(--rust); border: 0; border-radius: 2px; cursor: pointer; font-size: 12px; font-weight: 700; letter-spacing: .04em; padding: 13px 18px; transition: transform .2s ease, background .2s ease; }
+    .nav-cta:hover, .button:hover { background: var(--rust-dark); transform: translateY(-2px); }
+
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 610px; align-items: center; gap: 80px; padding: 70px 0 84px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 670px; margin: 18px 0 22px; font: 400 clamp(58px, 8vw, 106px)/.88 var(--serif); letter-spacing: -.045em; }
+    h1 em { color: var(--rust); font-style: italic; }
+    .hero-copy > p { max-width: 400px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; align-items: center; gap: 22px; margin-top: 34px; }
+    .text-link { border-bottom: 1px solid var(--ink); font-size: 12px; font-weight: 700; padding-bottom: 3px; }
+    .text-link:hover { color: var(--rust); border-color: var(--rust); }
+    .hero-visual { position: relative; max-width: 460px; justify-self: end; width: 100%; }
+    .hero-image { display: block; width: 84%; height: 480px; margin-left: auto; object-fit: cover; filter: saturate(.86); }
+    .hero-image-frame { position: absolute; top: 20px; right: -20px; width: 84%; height: 480px; border: 8px solid var(--rust); transform: rotate(4deg); z-index: -1; }
+    .hero-note { position: absolute; left: -14px; bottom: 36px; display: grid; place-items: center; width: 135px; height: 135px; padding: 22px; color: var(--ink); background: var(--sage); border-radius: 50%; font: italic 19px/1.05 var(--serif); text-align: center; transform: rotate(-9deg); }
+    .hero-stamp { position: absolute; top: 20px; left: -30px; color: var(--rust); font: 11px var(--mono); writing-mode: vertical-rl; letter-spacing: .12em; text-transform: uppercase; }
+
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; white-space: nowrap; }
+    .ticker-track { display: flex; gap: 42px; width: max-content; padding: 14px 0; color: var(--muted); font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; animation: drift 26s linear infinite; }
+    .ticker-track span:nth-child(even) { color: var(--rust); }
+    @keyframes drift { to { transform: translateX(-50%); } }
+
+    .section { padding: 112px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 38px; }
+    h2 { margin-top: 10px; font: 400 clamp(38px, 5vw, 65px)/.95 var(--serif); letter-spacing: -.04em; }
+    .section-intro { max-width: 280px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .product { position: relative; }
+    .product-image { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--paper-deep); }
+    .product-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .product:hover .product-image img { transform: scale(1.05); }
+    .tag { position: absolute; top: 14px; left: 14px; padding: 7px 9px; color: var(--paper); background: var(--rust); font: 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+    .product-info { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding: 16px 0 14px; }
+    .product h3 { font: 400 22px var(--serif); }
+    .product p { color: var(--muted); font: 11px var(--mono); margin-top: 5px; }
+    .order-hint { color: var(--rust); font: 500 11px var(--mono); letter-spacing: .04em; white-space: nowrap; }
+
+    .story { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 10%; background: var(--sage); color: var(--paper); padding: 92px max(24px, calc((100vw - 1160px) / 2)); }
+    .story .eyebrow { color: var(--rust-dark); }
+    .story h2 { max-width: 430px; }
+    .story-copy { max-width: 480px; color: #e8eedc; font-size: 15px; line-height: 1.9; }
+    .story-copy p + p { margin-top: 18px; }
+    .signature { display: inline-block; margin-top: 28px; color: var(--rust-dark); font: italic 30px var(--serif); transform: rotate(-5deg); }
+
+    .custom { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .custom-copy { max-width: 430px; }
+    .custom-copy > p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-top: 22px; }
+    .steps { border-top: 1px solid var(--line); }
+    .step { display: grid; grid-template-columns: 42px 1fr; gap: 18px; border-bottom: 1px solid var(--line); padding: 22px 0; }
+    .step-num { color: var(--rust); font: 12px var(--mono); }
+    .step h3 { font: 400 25px var(--serif); }
+    .step p { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 5px; }
+
+    .order-band { position: relative; overflow: hidden; background: var(--rust); color: var(--paper); padding: 76px 0; }
+    .order-band::after { content: "✳"; position: absolute; right: 8%; top: 35%; color: rgba(244,238,230,.18); font-size: 180px; line-height: .5; }
+    .order-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+    .order-band h2 { max-width: 650px; }
+    .order-band .eyebrow { color: #ffd8a1; }
+    .button-light { position: relative; z-index: 1; color: var(--rust); background: var(--paper); white-space: nowrap; }
+    .button-light:hover { color: var(--rust-dark); background: white; }
+
+    footer { padding: 34px 0 42px; }
+    .footer-top { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .footer-top p { max-width: 240px; color: var(--muted); font-size: 12px; line-height: 1.7; margin-top: 13px; }
+    .socials { display: flex; gap: 20px; color: var(--rust); font: 11px var(--mono); }
+    .socials a:hover { color: var(--ink); }
+    .footer-bottom { display: flex; justify-content: space-between; color: var(--muted); font: 10px var(--mono); padding-top: 18px; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .topline { padding-inline: 12px; font-size: 9px; }
+      header { padding-top: 19px; }
+      .nav-links { display: none; }
+      .hero { display: block; min-height: auto; padding: 76px 0 74px; }
+      h1 { font-size: clamp(60px, 17vw, 92px); }
+      .hero-visual { width: calc(100% - 20px); margin: 58px 0 0 auto; }
+      .hero-image, .hero-image-frame { height: 370px; }
+      .hero-image-frame { right: 4px; }
+      .hero-note { left: -22px; bottom: 18px; width: 112px; height: 112px; font-size: 16px; }
+      .section { padding: 78px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 18px; }
+      .product-grid { grid-template-columns: 1fr 1fr; gap: 24px 12px; }
+      .product h3 { font-size: 18px; }
+      .product-info { display: block; }
+      .order-hint { display: block; margin-top: 8px; }
+      .story { display: block; padding: 70px 16px; }
+      .story-copy { margin-top: 30px; }
+      .custom { display: block; }
+      .steps { margin-top: 46px; }
+      .order-inner { display: block; }
+      .order-inner .button { margin-top: 28px; }
+      .footer-top, .footer-bottom { display: block; }
+      .socials { margin-top: 22px; }
+      .footer-bottom p + p { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">শিল্প · হস্তশিল্প · বস্ত্ৰ · অসম / Art · Craft · Handloom · Assam</div>
+  <header class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top"><img class="brand-mark" src="creative-craft-logo.jpg" alt="Creative Craft logo"><span class="brand-copy"><strong>Creative Craft</strong><small>Since 2025</small></span></a>
+      <div class="nav-links">
+        <a href="#shop">The edit</a>
+        <a href="#story">Our story</a>
+        <a href="#custom">Custom work</a>
+      </div>
+      <a class="nav-cta" href="#order">Order on WhatsApp <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Creative_Craft / Axom</div>
+        <h1>Stories of<br>Assam,<br><em>made by hand.</em></h1>
+        <p>Framed heritage, handloom textures, crochet, and crafted details inspired by the colours, symbols, and everyday beauty of Assamese culture.</p>
+        <div class="hero-actions">
+          <a class="button" href="#shop">Explore the edit <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://www.instagram.com/creative_craft_25" target="_blank" rel="noreferrer">See us on Instagram ↗</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="hero-stamp">made in Axom / shipped with care</span>
+        <img class="hero-image" src="images/product_3.png" alt="Assam Premier League handmade framed keepsake">
+        <div class="hero-image-frame" aria-hidden="true"></div>
+        <div class="hero-note">made by hand,<br>from our<br>little studio</div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>gamosa inspired</span><span>✳</span><span>stories of axom</span><span>✳</span><span>handmade heritage</span><span>✳</span><span>gamosa inspired</span><span>✳</span><span>stories of axom</span><span>✳</span><span>handmade heritage</span><span>✳</span></div></div>
+
+    <section class="section wrap" id="shop">
+      <div class="section-head">
+        <div><div class="eyebrow">The current edit / 01</div><h2>Made for<br>every corner.</h2></div>
+        <p class="section-intro">Discover keepsakes and tactile details rooted in Assam, made for homes, celebrations, gifting, and thoughtful wholesale orders.</p>
+      </div>
+      <div class="product-grid">
+        <a class="product" href="#order" data-product="Axom Keepsakes">
+          <div class="product-image"><img src="images/product_1.png" alt="Handmade framed keepsake with Assam artwork"><span class="tag">best seller</span></div>
+          <div class="product-info"><div><h3>Axom keepsakes</h3><p>framed heritage · made to order</p></div><span class="order-hint">enquire ↗</span></div>
+        </a>
+        <a class="product" href="#order" data-product="Gamosa Stories">
+          <div class="product-image"><img src="images/product_2.png" alt="Framed Assamese handloom artwork"><span class="tag">made to order</span></div>
+          <div class="product-info"><div><h3>Gamosa stories</h3><p>handloom · framed with care</p></div><span class="order-hint">enquire ↗</span></div>
+        </a>
+        <a class="product" href="#order" data-product="Handmade Colour Crochet">
+          <div class="product-image"><img src="images/product_6.png" alt="Handmade crochet sunflower bag"><span class="tag">new</span></div>
+          <div class="product-info"><div><h3>Handmade colour</h3><p>crochet · colourful · tactile</p></div><span class="order-hint">enquire ↗</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+        <div><div class="eyebrow">A note from the studio</div><h2>Our craft carries a place.</h2></div>
+      <div class="story-copy"><p>Creative Craft celebrates Assam through framed stories, handloom patterns, traditional symbols, crochet, and objects made for modern homes.</p><p>Every piece is a meeting point between memory and making: rooted in Axom, shaped by hand, and ready to travel anywhere.</p><span class="signature">made with feeling</span></div>
+    </section>
+
+    <section class="section wrap custom" id="custom">
+      <div class="custom-copy"><div class="eyebrow">Have a project in mind?</div><h2>Let’s make it personal.</h2><p>Tell us the occasion, your colours, quantities, or interior brief. We will turn the idea into something that feels unmistakably yours.</p><a class="text-link" href="#order" style="display:inline-block; margin-top:26px;">Start a custom order ↗</a></div>
+      <div class="steps">
+        <div class="step"><span class="step-num">01</span><div><h3>Share your brief</h3><p>Send a message with your occasion, quantity, budget, and references.</p></div></div>
+        <div class="step"><span class="step-num">02</span><div><h3>We sketch it out</h3><p>We reply with options, timelines, and a clear quote.</p></div></div>
+        <div class="step"><span class="step-num">03</span><div><h3>Made, packed, yours</h3><p>Once approved, your one-off piece gets made and sent with care.</p></div></div>
+      </div>
+    </section>
+
+    <section class="order-band" id="order"><div class="wrap order-inner"><div><div class="eyebrow">Ready when you are</div><h2>Have a gift in mind?<br>Let’s make it happen.</h2></div><a class="button button-light" id="whatsapp-link" href="#" target="_blank" rel="noreferrer">Message us on WhatsApp <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top"><div><a class="brand" href="#top"><img class="brand-mark" src="creative-craft-logo.jpg" alt="Creative Craft logo"><span class="brand-copy"><strong>Creative Craft</strong><small>Since 2025</small></span></a><p>Art, craft, props, crochet, interiors, and handloom from Assam.</p></div><div class="socials"><a href="https://www.instagram.com/creative_craft_25" target="_blank" rel="noreferrer">Instagram ↗</a><a href="#order">WhatsApp ↗</a></div></div>
+    <div class="footer-bottom"><p>© 2025 Creative Craft</p><p>made slowly, sent warmly</p></div>
+  </footer>
+
+  <script>
+    // Replace this sample number with the studio's WhatsApp number, country code included.
+    const whatsappNumber = "919876543210";
+    const whatsappBase = `https://wa.me/${whatsappNumber}`;
+    const defaultMessage = "Hi Creative Craft! I would love to place an order. Can you share your current catalogue and details?";
+    const whatsappLink = document.querySelector("#whatsapp-link");
+    whatsappLink.href = `${whatsappBase}?text=${encodeURIComponent(defaultMessage)}`;
+
+    document.querySelectorAll("[data-product]").forEach((product) => {
+      product.addEventListener("click", () => {
+        const message = `Hi Creative Craft! I am interested in the ${product.dataset.product}. Please share the details and available options.`;
+        whatsappLink.href = `${whatsappBase}?text=${encodeURIComponent(message)}`;
+      });
+    });
+  </script>
+</body>
+</html>
